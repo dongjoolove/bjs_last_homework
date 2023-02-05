@@ -15,20 +15,16 @@ function deleteToDo(event) {
 }
 
 function checkToDo(checkId,checkVal) { 
-    //const checkedVal = event.target.parentElement;            
+      
     ToDos.forEach(element => {
         if(checkId==element.id){
             if(checkVal===true){
                 element.checkVal=true;
             }else{
                 element.checkVal=false;
-            }
-            
-        }
-
-        
-      });
-
+            }            
+        }        
+    });
     
     saveToDos();
 }
@@ -63,12 +59,10 @@ function printTodo(toDoAdd){
     button.innerText = "Del";
     button.addEventListener("click", deleteToDo);    
     if(checkedVal===true){
-        span.style.textDecoration = 'line-through';
-        
-        checkbox.setAttribute('checked', 'checked');
-      
-       
+        span.style.textDecoration = 'line-through';        
+        checkbox.setAttribute('checked', 'checked');  
     }
+
     li.appendChild(checkbox);
     li.appendChild(span);
     li.appendChild(button);
@@ -97,7 +91,7 @@ function handleAddSaveTodo(event){
 
 toDoForm.addEventListener("submit",handleAddSaveTodo); 
 
-const SaveTodoList=localStorage.getItem(TODOS_KEY);//JSON.parse(localStorage.getItem(TODOS_KEY)); 
+const SaveTodoList=localStorage.getItem(TODOS_KEY);
 
 if(SaveTodoList!==null){
     const parsedToDos=JSON.parse(SaveTodoList);
