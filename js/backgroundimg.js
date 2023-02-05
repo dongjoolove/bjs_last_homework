@@ -8,6 +8,7 @@ function changeBackground(){
    
     document.body.style.background = `url(./img/${selectImageName}) no-repeat 0 0`;
     document.body.style.backgroundSize="cover";
+    document.body.style.backgroundColor="darkblue";
    
     
 }
