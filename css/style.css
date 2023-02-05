@@ -1,0 +1,84 @@
+body{
+    min-height:800px;
+    display:flex;
+    flex-direction: column;
+    
+    margin:30px;
+}
+.hidden{
+    display:none;
+}
+.button{
+    background-color: #CCC;
+    color:#Fff;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+}
+#weather{
+   
+    color:#Fff;
+    align-items: center;
+    display:flex;
+    align-items: right;
+    flex-direction: column;
+}
+#clock{
+    color:#Fff;
+}
+
+
+.todoArea{
+    position: absolute; bottom: 0px;
+}
+ul{
+    list-style: none;
+}
+ul li{
+    color:#Fff;
+
+}
+
+
+
+
+#greeting{
+    color:#Fff;
+
+}
+#loginFrm{
+    color:#Fff;
+
+}
+#calResult{
+    margin-top:30px;
+    font-size:20px;
+    color:#fff;
+    min-height: 50px;
+}
+
+.calOption{
+    background-color: lightslategray;
+    border :1px solid #FEFEFE;
+    padding:10px;
+    border-radius: 10px;
+}
+.calNum{
+    background-color: lightslategray;
+    border :1px solid #FEFEFE;
+    
+    padding:10px;
+    border-radius: 10px;
+}
+#quote{
+    
+    color:#Fff;
+    font-size:20px;
+    display:flex;
+    align-items: baseline;
+    flex-direction: column;
+}
+#quote span:first-child{
+    font-weight: 600;
+}
