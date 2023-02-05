@@ -26,7 +26,7 @@ function checkToDo(checkId,checkVal) {
             
         }
 
-        console.log(element.checkVal);
+        
       });
 
     
