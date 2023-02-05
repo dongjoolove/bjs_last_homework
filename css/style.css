@@ -1,9 +1,10 @@
 body{
-    min-height:1200px;
+    height:100%;
     display:flex;
     flex-direction: column;
-    
+   
     margin:30px;
+    
 }
 .hidden{
     display:none;
