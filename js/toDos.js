@@ -13,6 +13,7 @@ function deleteToDo(event) {
     li.remove(); 
     saveToDos();
 }
+
 function printTodo(toDoAdd){
     const li = document.createElement("li");
     const span = document.createElement("span");
@@ -20,7 +21,8 @@ function printTodo(toDoAdd){
     span.innerText = toDoAdd.text;  
     
     const button = document.createElement("button");
-    button.innerText = "X";
+    button.classList.add("button");
+    button.innerText = "Del";
     button.addEventListener("click", deleteToDo);    
     li.appendChild(span);
     li.appendChild(button);
