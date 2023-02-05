@@ -35,9 +35,11 @@ header{
 }
 ul{
     list-style: none;
+    padding:0px;
 }
 ul li{
     color:#Fff;
+   
 
 }
 
@@ -52,6 +54,9 @@ ul li{
     color:#Fff;
 
 }
+
+
+
 #calResult{
     margin-top:30px;
     font-size:20px;
