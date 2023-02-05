@@ -14,30 +14,79 @@ function deleteToDo(event) {
     saveToDos();
 }
 
+function checkToDo(checkId,checkVal) { 
+    //const checkedVal = event.target.parentElement;            
+    ToDos.forEach(element => {
+        if(checkId==element.id){
+            if(checkVal===true){
+                element.checkVal=true;
+            }else{
+                element.checkVal=false;
+            }
+            
+        }
+
+        console.log(element.checkVal);
+      });
+
+    
+    saveToDos();
+}
+
 function printTodo(toDoAdd){
     const li = document.createElement("li");
     const span = document.createElement("span");
+    const checkbox = document.createElement("input");
+    const li_id=toDoAdd.id;  
     li.id=toDoAdd.id;  
+    const checkedVal=toDoAdd.checkVal;
+
     span.innerText = toDoAdd.text;  
+    checkbox.type = 'checkbox';
+    
+    checkbox.addEventListener('change', (event) => {
+        if(checkbox.checked ){
+          span.style.textDecoration = 'line-through';
+          
+          checkToDo(li_id,true);
+
+        } else {
+         span.style.textDecoration = '';
+      
+          checkToDo(li_id,false);
+        }
+        
+      });   
     
     const button = document.createElement("button");
     button.classList.add("button");
     button.innerText = "Del";
     button.addEventListener("click", deleteToDo);    
+    if(checkedVal===true){
+        span.style.textDecoration = 'line-through';
+        
+        checkbox.setAttribute('checked', 'checked');
+      
+       
+    }
+    li.appendChild(checkbox);
     li.appendChild(span);
     li.appendChild(button);
-  
+   
     toDoList.appendChild(li);
+   
     saveToDos();
 }
 function handleAddSaveTodo(event){
     event.preventDefault();
 
     const toDoAdd=toDoInput.value;
+    const toDocheckVal=false;
     if(toDoAdd!==""){
         const newToDobj={
             text:toDoAdd,
             id:Date.now(),
+            checkVal:toDocheckVal,
         }
         ToDos.push(newToDobj);
         printTodo(newToDobj);
